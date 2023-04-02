@@ -1,8 +1,7 @@
 import pandas as pd
+from constants import FILE_PATH_F2, EVENTS_COL
 
-FILE_PATH = "f2.csv"
-data_frame = pd.read_csv(FILE_PATH)
-
-dates_events = data_frame[data_frame[' Events'].isin(['Snow', 'Rain', 'Rain-Snow'])]['PKT'].tolist()
+data_frame = pd.read_csv(FILE_PATH_F2)
+dates_events = data_frame[data_frame[EVENTS_COL].isin(['Snow', 'Rain', 'Rain-Snow'])]['PKT'].tolist()
 
 print(dates_events)
